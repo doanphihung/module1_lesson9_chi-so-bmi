@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chỉ số cơ thể BMI</title>
+    <style>
+        h3 {
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+<label for="weight">Weight</label>
+<input type="number" id="weight" value=""> <br>
+<label for="height">Height</label>
+<input type="number" id="height" value=""> <br>
+<button type="button" id="click">Tính bmi</button> <br>
+<h3 id="result" style="background-color: red"></h3>
+<script>
+    document.getElementById('click').addEventListener('click', function ()
+    {
+
+        let weight = parseFloat(document.getElementById('weight').value)
+        let height = parseFloat(document.getElementById('height').value)
+        let bmi = weight / (height * height)
+
+
+        if (bmi < 18) {
+            document.getElementById('result').innerHTML = 'Underweight:  ' + bmi;
+        } else if (bmi < 25) {
+            document.getElementById('result').innerHTML = 'Normal: ' + bmi;
+        } else if (bmi < 30) {
+            document.getElementById('result').innerHTML = 'Overweight: ' + bmi;
+        } else {
+            document.getElementById('result').innerHTML = 'Obese'
+        }
+    })
+
+
+
+</script>
+
+</body>
+</html>
